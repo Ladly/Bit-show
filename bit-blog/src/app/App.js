@@ -1,8 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Switch, Route} from 'react-router-dom'
+
+import { Header } from './partials/Header'
+import { Footer } from './partials/Footer'
+import { HomePage } from './pages/HomePage'
+import { AboutPage } from './pages/AboutPage'
+import { AuthorsPage } from './pages/AuthorsPage'
+import { SingleAuthorPage } from './pages/SingleAuthorPage'
+import { SinglePostPage } from './pages/SinglePostPage'
+import { NewPostPage } from './pages/NewPostPage'
 
 const App = () => {
     return (
-      <h1>Hello</h1>
+      <React.Fragment>
+        <Header />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/authors" component={AuthorsPage}/>
+            <Route exact path="/singlepost/:id" component={SinglePostPage}/>
+            <Route exact path="/singleauthor" component={SingleAuthorPage}/>
+            <Route exact path="/posts/new" component={NewPostPage}/>
+          </Switch>
+        <Footer />
+      </React.Fragment>
     )
 }
 
