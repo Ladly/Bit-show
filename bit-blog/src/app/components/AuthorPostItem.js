@@ -1,12 +1,21 @@
-import React from 'react' 
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const AuthorPostItem = () => {
+export const AuthorPostItem = (props) => {
+    const makePosts = () => {
+        return props.posts.map((post, i) => {
+            return (
+                <li key={i}>
+                    <Link to={`/singlepost/${post.id}`}>
+                        <h5>{post.title}</h5>
+                    </Link>
+                </li>)
+        })
+    }
+
     return (
-        <li>
-            <Link to="/singlepost">
-                <h5>Title 2 - Pellentesque sed consequat leo. Duis erat tortor...</h5>
-            </Link>
-        </li>
+        <div>
+            {makePosts()}
+        </div>
     )
 }

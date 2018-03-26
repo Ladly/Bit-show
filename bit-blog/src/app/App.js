@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import { Header } from './partials/Header'
 import { Footer } from './partials/Footer'
@@ -11,20 +11,20 @@ import { SinglePostPage } from './pages/SinglePostPage'
 import { NewPostPage } from './pages/NewPostPage'
 
 const App = () => {
-    return (
-      <React.Fragment>
-        <Header />
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/authors" component={AuthorsPage}/>
-            <Route exact path="/singlepost/:id" component={SinglePostPage}/>
-            <Route exact path="/singleauthor" component={SingleAuthorPage}/>
-            <Route exact path="/posts/new" component={NewPostPage}/>
-          </Switch>
-        <Footer />
-      </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/about" component={AboutPage} />
+        <Route exact path="/authors" component={AuthorsPage} />
+        <Route exact path="/singlepost/:id" component={SinglePostPage} />
+        <Route exact path="/singleauthor/:id" component={SingleAuthorPage} />
+        <Route exact path="/posts/new" component={NewPostPage} />
+      </Switch>
+      <Footer />
+    </React.Fragment>
+  )
 }
 
 export default App;

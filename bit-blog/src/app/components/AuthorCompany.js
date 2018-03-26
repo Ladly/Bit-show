@@ -1,11 +1,12 @@
-import React from 'react' 
+import React from 'react'
 
-export const AuthorCompany = () => {
+export const AuthorCompany = ({ name, slogan }) => {
+
     return (
         <React.Fragment>
             <h2>Company</h2>
-            <h5>city: cool_city</h5>
-            <h5>zipcode: 226883</h5>   
+            <h5>Name: {name}</h5>
+            <h5>Slogan: {slogan}</h5>
         </React.Fragment>
     )
 }

@@ -11,16 +11,16 @@ class HomePage extends React.Component {
 
     fetchPosts = () => {
         fetchService.fetchPosts()
-        .then( response => {
-            return response.map(resp => {
-                const {title, userId, body, id} = resp;
-                return createPostInstances(title, userId, body, id)
+            .then(response => {
+                return response.map(resp => {
+                    const { title, userId, body, id } = resp;
+                    return createPostInstances(title, userId, body, id)
+                })
             })
-        })
-        .then (posts => posts.slice(0,10))
-        .then(postsData => {
-            this.setState({ posts: postsData })
-        })
+            .then(posts => posts.slice(0, 10))
+            .then(postsData => {
+                this.setState({ posts: postsData })
+            })
     }
 
     componentDidMount() {
@@ -30,8 +30,8 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="container">
-            <h2 className="center-align">Posts</h2>
-                <PostList posts={this.state.posts}/>
+                <h2 className="center-align">Posts</h2>
+                <PostList posts={this.state.posts} />
             </div>
         )
     }
